@@ -14,7 +14,7 @@
 				"request": "launch",
 				"module": "image2ico",
 				"args": [
-					"--help"
+					"image2ico.png"
 				],
 				"justMyCode": true
 			}

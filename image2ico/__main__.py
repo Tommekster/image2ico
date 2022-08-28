@@ -1,9 +1,10 @@
 from . import cli
+from . import converter
 
 
 def main():
     args = cli.parse_arguments()
-    print(args)
+    converter.convert(args.input.as_posix(), args.output.as_posix())
 
 
 if __name__ == "__main__":
