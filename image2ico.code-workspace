@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "image2ico --help",
+				"type": "python",
+				"request": "launch",
+				"module": "image2ico",
+				"args": [
+					"--help"
+				],
+				"justMyCode": true
+			}
+		]
+	}
+}
