@@ -34,3 +34,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.distutils.build_exe]
 packages = ["image2ico"]
 excludes = ["tkinter", "unittest", "pydoc"]
+include_files = ["image2ico.png"]

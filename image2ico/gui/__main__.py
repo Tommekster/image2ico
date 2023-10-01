@@ -1,3 +1,5 @@
+import sys
+from pathlib import Path
 import tkinter as tk
 
 
@@ -5,6 +7,14 @@ def main():
     root = tk.Tk()
     root.title("Image2ico")
     root.resizable(False, False)
+
+    icon_file = Path(
+        sys.executable
+        if getattr(sys, "frozen", False)
+        else __file__+"/../.."
+    ).resolve().parent.joinpath("image2ico.png").as_posix()
+    icon = tk.PhotoImage(file=icon_file)
+    root.iconphoto(True, icon)
 
     frame = tk.Frame(root)
     frame.grid(row=0, column=0, padx=10, pady=5, sticky="wens")
