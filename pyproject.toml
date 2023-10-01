@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "image2ico"
 version = "0.1.0"
-description = ""
+description = "Image to icon converting tool"
 authors = ["Tomas Zikmund <tommekster@gmail.com>"]
 
 [tool.poetry.dependencies]
@@ -9,10 +9,28 @@ python = "^3.10"
 typed-argument-parser = "^1.7.2"
 Pillow = "^9.2.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^7.1"
 autopep8 = "^1.7.0"
+poethepoet = "^0.24.0"
+pyright = "^1.1.329"
+cx-freeze = "^6.15.9"
+
+[tool.poetry.scripts]
+image2ico = "image2ico.__main__:main"
+
+[tool.poe.tasks]
+test = "pytest"
+build = ["pyright", "_build_msi"]
+build_exe = ["pyright", "test", "_build_exe"]
+_build_msi = "python setup.py bdist_msi"
+_build_exe = "python setup.py build_exe"
+pyright = "pyright"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.distutils.build_exe]
+packages = ["image2ico"]
+excludes = ["tkinter", "unittest", "pydoc"]

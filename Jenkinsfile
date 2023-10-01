@@ -1,0 +1,3 @@
+pythonAppPipeline { 
+    localize = false
+}

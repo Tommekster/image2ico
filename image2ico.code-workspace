@@ -4,7 +4,26 @@
 			"path": "."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true
+		},
+		"python.testing.pytestArgs": [
+			"tests"
+		],
+		"python.testing.unittestEnabled": false,
+		"python.testing.pytestEnabled": true,
+		"python.analysis.diagnosticSeverityOverrides": {
+			"reportUnknownMemberType": "information"
+		}
+	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
@@ -17,6 +36,48 @@
 					"image2ico.png"
 				],
 				"justMyCode": true
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "PyRight & PyTest",
+				"command": ".venv\\Scripts\\poe pyright && .venv\\Scripts\\poe test",
+				"type": "shell",
+				"args": [],
+				"problemMatcher": {
+					"owner": "python",
+					"fileLocation": "autoDetect",
+					"pattern": {
+						"regexp": "^\\s*(.*):(\\d+):(\\d+) -\\s+(warning|error):\\s+(.*)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"message": 5
+					}
+				},
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				}
+			},
+			{
+				"label": "Build exe",
+				"command": ".venv\\Scripts\\poe build_exe",
+				"type": "shell",
+				"group": "build"
+			},
+			{
+				"label": "Build dist",
+				"command": ".venv\\Scripts\\poe build",
+				"type": "shell",
+				"group": "build"
 			}
 		]
 	}
