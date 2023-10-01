@@ -28,13 +28,20 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"name": "image2ico --help",
+				"name": "image2ico",
 				"type": "python",
 				"request": "launch",
 				"module": "image2ico",
 				"args": [
 					"image2ico.png"
 				],
+				"justMyCode": true
+			},
+			{
+				"name": "image2ico GUI",
+				"type": "python",
+				"request": "launch",
+				"module": "image2ico.gui",
 				"justMyCode": true
 			}
 		]
