@@ -1,8 +1,20 @@
 # Image2ico
 
+![Logo](image2ico.png "Logo")
 Image to icon converting tool
 
-## Usage
+## Features
+
+- converts images to .ico files
+- command-line interface
+- GUI Form
+- Drag & drop
+- Image context menu "Open in Image2Ico"
+- Reveals output file in explorer
+
+![screenshot](screenshot.png "Screenshot")
+
+## Command-line usage
 
 ```
 usage: image2ico [-o OUTPUT] [-s [{16,24,32,48,64,128,255} ...]] [-h] input
