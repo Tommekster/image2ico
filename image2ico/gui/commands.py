@@ -15,9 +15,7 @@ class Commands(Variables):
                 ("All files", "*.*"),
             )
         )
-        filepath = Path(filename)
-        self.input_file.set(str(filepath))
-        self.output_file.set(str(filepath.with_suffix(".ico")))
+        self.__set_input_image__(Path(filename))
 
     def save_file(self):
         filename = filedialog.asksaveasfilename(
@@ -57,3 +55,7 @@ class Commands(Variables):
 
         FolderOpener().open(output)
         cast(tk.Tk,self).destroy()
+
+    def __set_input_image__(self, filepath:Path):
+        self.input_file.set(str(filepath))
+        self.output_file.set(str(filepath.with_suffix(".ico")))

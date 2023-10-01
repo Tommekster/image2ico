@@ -42,6 +42,9 @@
 				"type": "python",
 				"request": "launch",
 				"module": "image2ico.gui",
+				"args": [
+					"image2ico.png"
+				],
 				"justMyCode": true
 			}
 		]

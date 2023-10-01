@@ -1,8 +1,10 @@
 from .app import App
+from .cli_arguments import CliArguments
 
 
 def main():
-    root = App()
+    args = CliArguments().parse_args()
+    root = App(args.input)
     root.mainloop()
 
 
