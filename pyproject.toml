@@ -14,6 +14,7 @@ pytest = "^7.1"
 autopep8 = "^1.7.0"
 poethepoet = "^0.24.0"
 pyright = "^1.1.329"
+cx-freeze = "^6.15.9"
 
 [tool.poetry.scripts]
 image2ico = "image2ico.__main__:main"
@@ -29,3 +30,7 @@ pyright = "pyright"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.distutils.build_exe]
+packages = ["image2ico"]
+excludes = ["tkinter", "unittest", "pydoc"]
