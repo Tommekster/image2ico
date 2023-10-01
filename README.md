@@ -25,3 +25,5 @@ options:
 [https://stackoverflow.com/questions/45507/is-there-a-python-library-for-generating-ico-files](https://stackoverflow.com/questions/45507/is-there-a-python-library-for-generating-ico-files)
 
 [https://www.codeproject.com/Articles/16178/IconLib-Icons-Unfolded-MultiIcon-and-Windows-Vista](https://www.codeproject.com/Articles/16178/IconLib-Icons-Unfolded-MultiIcon-and-Windows-Vista)
+
+[https://stackoverflow.com/questions/2772452/how-to-associate-application-with-existing-file-types-using-wix-installer](https://stackoverflow.com/questions/2772452/how-to-associate-application-with-existing-file-types-using-wix-installer)
