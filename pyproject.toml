@@ -13,6 +13,9 @@ Pillow = "^9.2.0"
 pytest = "^7.1"
 autopep8 = "^1.7.0"
 
+[tool.poetry.scripts]
+image2ico = "image2ico.__main__:main"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
