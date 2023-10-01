@@ -5,6 +5,16 @@
 		}
 	],
 	"settings": {
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true
+		},
 		"python.analysis.diagnosticSeverityOverrides": {
 			"reportUnknownMemberType": "information"
 		}
