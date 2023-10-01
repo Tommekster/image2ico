@@ -21,17 +21,28 @@
 		"python.testing.unittestEnabled": false,
 		"python.testing.pytestEnabled": true,
 		"python.analysis.diagnosticSeverityOverrides": {
-			"reportUnknownMemberType": "information"
+			"reportUnknownMemberType": "information",
+			"reportMissingTypeStubs": "information"
 		}
 	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"name": "image2ico --help",
+				"name": "image2ico",
 				"type": "python",
 				"request": "launch",
 				"module": "image2ico",
+				"args": [
+					"image2ico.png"
+				],
+				"justMyCode": true
+			},
+			{
+				"name": "image2ico GUI",
+				"type": "python",
+				"request": "launch",
+				"module": "image2ico.gui",
 				"args": [
 					"image2ico.png"
 				],
