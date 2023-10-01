@@ -1,3 +1,4 @@
+import sys
 import tomli
 from cx_Freeze import setup, Executable
 
@@ -8,6 +9,10 @@ with open("pyproject.toml", "rb") as f:
 
 bdist_msi_options = {
     "data": {
+        "Directory": [
+            ("ProgramMenuFolder", "TARGETDIR", "."),
+            ("MyProgramMenu", "ProgramMenuFolder", "Image2ico"),
+        ],
         "ProgId": [
             ("Prog.Id", None, None,
              "Image2ico: Image to icon converting tool", "IconId", None),
@@ -36,6 +41,14 @@ setup(
             'cli.py',
             icon=icon,
             target_name='image2ico',
+        ),
+        Executable(
+            'gui.py',
+            icon=icon,
+            base='Win32GUI' if sys.platform == 'win32' else None,
+            target_name='image2ico_gui',
+            shortcut_name="Image2ico",
+            shortcut_dir="MyProgramMenu",
         )
     ]
 )

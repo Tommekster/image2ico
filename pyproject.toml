@@ -18,6 +18,7 @@ cx-freeze = "^6.15.9"
 
 [tool.poetry.scripts]
 image2ico = "image2ico.__main__:main"
+image2ico_gui = "image2ico.gui.__main__:main"
 
 [tool.poe.tasks]
 test = "pytest"
@@ -32,6 +33,6 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.distutils.build_exe]
-packages = ["image2ico"]
-excludes = ["tkinter", "unittest", "pydoc"]
+packages = ["image2ico", "tkinter"]
+excludes = ["unittest", "pydoc"]
 include_files = ["image2ico.png"]
