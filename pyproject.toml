@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "image2ico"
 version = "0.1.0"
-description = ""
+description = "Image to icon converting tool"
 authors = ["Tomas Zikmund <tommekster@gmail.com>"]
 
 [tool.poetry.dependencies]
