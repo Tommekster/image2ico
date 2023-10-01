@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 from image2ico import converter
 from .folder_opener import FolderOpener
 
@@ -51,12 +51,29 @@ def main():
 
     def convert():
         input_image=Path(input_file.get())
+        if not input_image.is_file():
+            messagebox.showerror(
+                title="Missing input image",
+                message="Input image is not file!"
+            )
+            return
+
         output=Path(output_file.get())
-        converter.convert(
-            input_image=input_image,
-            output=output,
-            icon_sizes=[(x, x) for x, v in sizes.items() if v.get()]
-        )
+        output.parent.mkdir(parents=True, exist_ok=True)
+
+        try:
+            converter.convert(
+                input_image=input_image,
+                output=output,
+                icon_sizes=[(x, x) for x, v in sizes.items() if v.get()]
+            )
+        except Exception as e:
+            messagebox.showerror(
+                title="Converting error",
+                message=str(e)
+            )
+            return
+
         FolderOpener().open(output)
         root.destroy()
 
