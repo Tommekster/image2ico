@@ -4,7 +4,11 @@
 			"path": "."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"python.analysis.diagnosticSeverityOverrides": {
+			"reportUnknownMemberType": "information"
+		}
+	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
