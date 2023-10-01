@@ -11,6 +11,8 @@ class CliArguments(Tap):
     ]
 
     def configure(self) -> None:
+        self.prog="image2ico"
+        self.description="Image to icon converting tool"
         self.add_argument(
             "input", help="input image file")
         self.add_argument(
