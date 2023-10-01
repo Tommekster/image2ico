@@ -8,6 +8,7 @@ authors = ["Tomas Zikmund <tommekster@gmail.com>"]
 python = "^3.10"
 typed-argument-parser = "^1.7.2"
 Pillow = "^9.2.0"
+tkinterdnd2 = "^0.3.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1"

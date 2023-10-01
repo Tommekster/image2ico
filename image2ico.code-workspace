@@ -21,7 +21,8 @@
 		"python.testing.unittestEnabled": false,
 		"python.testing.pytestEnabled": true,
 		"python.analysis.diagnosticSeverityOverrides": {
-			"reportUnknownMemberType": "information"
+			"reportUnknownMemberType": "information",
+			"reportMissingTypeStubs": "information"
 		}
 	},
 	"launch": {

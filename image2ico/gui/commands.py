@@ -1,4 +1,4 @@
-from typing import cast
+from typing import Any, cast
 from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, messagebox
@@ -55,6 +55,13 @@ class Commands(Variables):
 
         FolderOpener().open(output)
         cast(tk.Tk,self).destroy()
+
+    def drop(self, event:Any):
+        if event.data:
+            file = Path(event.data)
+            if file.is_file() and file.suffix in (".png", ".jpg", ".jpeg", ".gif", ".bmp", ".ico"):
+                self.__set_input_image__(file)
+        return event.action
 
     def __set_input_image__(self, filepath:Path):
         self.input_file.set(str(filepath))
